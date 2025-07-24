@@ -1,36 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>1-Minute Wisdom</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RajnishHQ - Random Idea Generator</title>
   <style>
-    body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: #f7f6f3; padding: 20px; text-align: center; }
-    #wisdom { font-size: 1.8rem; margin-bottom: 30px; }
-    button { padding: 10px 20px; font-size: 1rem; border: none; background: #4CAF50; color: white; border-radius: 6px; cursor: pointer; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    #ideaBox {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 500px;
+      font-size: 1.2rem;
+      min-height: 100px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      color: #fff;
+      background: #e67e22;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #d35400;
+    }
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
   </style>
 </head>
 <body>
-  <div id="wisdom">Loading wisdom...</div>
-  <button onclick="showWisdom()">Next</button>
+  <h1>Welcome to RajnishHQ</h1>
+  <div id="ideaBox">Click the button to get inspired!</div>
+  <button onclick="generateIdea()">Inspire Me</button>
+  <footer>&copy; 2025 RajnishHQ</footer>
 
   <script>
-    const quotes = [
-      "One hour of focus beats 10 hours of busywork.",
-      "When nothing works, go drink chai. ☕",
-      "Peace isn’t found. It’s allowed.",
-      "Done is better than perfect.",
-      "Start before you’re ready.",
-      "Never skip breakfast or Wi-Fi.",
-      "Breathe in calm. Breathe out stress.",
-      "Procrastination is a form of meditation, right?",
+    const ideas = [
+      "A platform for renting household tools like a library.",
+      "An AI-powered travel itinerary planner.",
+      "A marketplace for local homemade food.",
+      "An app to swap unused gadgets with others.",
+      "A daily gratitude journal web app.",
+      "A website that shares random startup ideas.",
+      "A tool that generates fun coding challenges.",
+      "A service to plant a tree for every online purchase.",
+      "A minimalist productivity dashboard.",
+      "A collection of inspiring quotes from tech leaders."
     ];
 
-    function showWisdom() {
-      const random = Math.floor(Math.random() * quotes.length);
-      document.getElementById("wisdom").innerText = quotes[random];
+    function generateIdea() {
+      const randomIndex = Math.floor(Math.random() * ideas.length);
+      document.getElementById('ideaBox').textContent = ideas[randomIndex];
     }
-
-    // Show one on load
-    showWisdom();
   </script>
 </body>
 </html>
